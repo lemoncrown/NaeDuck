@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+      <ion-title>Stage</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="dismiss()">
+          <ion-icon ios="ios-close" md="md-close" style="zoom: 2.0;"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="grid-basic-page">
+
+  <ion-grid>
+    <ion-row >
+      <ion-col col-2  *ngFor="let item of items">
+        <div class=" {{ item.USE_YN | colorbackgroundSeat }}" (click)="onSelect(item)">{{item.SEAT_NO}}</div>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar padding-left padding-right>
+    <div class="cart-total">
+
+      <span class="cart-selection" *ngIf="seats != null">
+        <span class="cart-row">
+
+
+          <span class="cart-seat">{{alias}}</span>
+
+        </span>
+      </span>
+
+
+      <!--<span class="cart-price" *ngIf="seats?.length > 0">- {{getTotalSum(seats)}}грн.</span>-->
+    </div>
+
+
+    
+    <button class="checkout" ion-button color="primary" (click)="checkout()" icon-left [disabled]="canCheckout == false" end>
+      <ion-icon ios="ios-exit" md="md-exit"></ion-icon>
+      reserve
+    </button>
+
+    <button class="checkout" ion-button color="danger" (click)="checkout()" icon-left [disabled]="canCheckout == true" end>
+      <ion-icon ios="ios-exit" md="md-exit"></ion-icon>
+      delete
+    </button>
+
+
+  </ion-toolbar>
+</ion-footer>

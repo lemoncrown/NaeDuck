@@ -1,0 +1,136 @@
+
+
+hall-page {
+  /* Settings Header
+  =====================*/
+  ion-navbar {
+    img {
+      padding-top: 25px !important;
+      height: 60px;
+    }
+
+    button {
+      min-height: 57px;
+      border-radius: 8px !important;
+      letter-spacing: 1px;
+      padding: 20px 10px !important;
+      font-size: 12px !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .header-ios::after,
+  .header-md::after {
+    background-image: none !important;
+  }
+
+  .header-ios .toolbar-background-ios {
+    border-color: transparent !important;
+  }
+
+  .toolbar-background-ios,
+  .toolbar-background-md {
+    border-color: #fff;
+    background: #fff;
+  }
+
+
+  .grid-basic-page {
+
+    ion-col div {
+      background-color: #f0f5ff;
+      border: 1px solid #e6e9ee;
+      border-radius: 2px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    p {
+      padding: 10px 0 0 10px !important;
+      margin: 0;
+    }
+
+    .enable-backgrould-color {
+      background-color: #FFCC01; //#efefef; //#999900;
+    }
+
+    .disable-backgrould-color {
+      background-color: #DCDCDC;
+    }
+
+    .error-backgrould-color {
+      background-color: #efefef; //#E3CBC9;
+    }
+  }
+
+
+  .cart-total {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .cart-selection {
+      display: flex;
+      flex-direction: column;
+      margin-right: .4em;
+      color: #313131;
+
+      .cart-row {
+        margin-bottom: 2px;
+
+        .cart-row-label {
+          display: inline-block;
+          margin-right: 1px;
+          margin-bottom: 1px;
+          padding: 3px 4px;
+          border-radius: 2px;
+          text-align: center;
+          font-size: .9em;
+          color: white;
+          background-color: #555;
+          width: 1.7em;
+        }
+      }
+
+      .cart-seat {
+        display: inline-block;
+        width: 3.7em;
+        margin-right: 1px;
+        margin-bottom: 1px;
+        padding: 3px 4px;
+        background-color: orange;
+        border-radius: 2px;
+        text-align: center;
+        font-size: .9em;
+        color: white;
+        white-space: nowrap;
+      }
+    }
+
+    .cart-price {
+      color: #1aa3e0;
+      font-size: .9em;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+  }
+
+  ion-footer {
+    ion-toolbar.toolbar {
+      overflow: visible;
+      contain: none;
+
+      .toolbar-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .checkout {
+        align-self: center;
+      }
+    }
+  }
+}

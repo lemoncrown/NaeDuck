@@ -1,0 +1,17 @@
+<ion-content class="background-color-transparent">
+
+  <div>Inspect</div>
+
+
+
+  <ion-fab bottom center>
+    <button ion-fab (click)="startCameraOnOff()" color="{{ionicNamedColor}}"><ion-icon ios="ios-camera" md="md-camera" style="zoom:1.5;"></ion-icon></button>
+  </ion-fab>
+
+
+  <ion-fab bottom right>
+    <button ion-fab color="light"  (click)="exitPage()">  <ion-icon ios="ios-close" md="md-close" style="zoom:1.5;"></ion-icon></button>
+  </ion-fab>
+
+  <div class="count-item">{{smileCount}}</div>
+</ion-content>

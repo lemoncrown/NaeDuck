@@ -1,0 +1,95 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>Face Emote Solution</ion-title>
+
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+
+  <ion-item-group class="people-group">
+    <ion-item-divider color="grey" no-lines>Selection Info.</ion-item-divider>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-item no-lines>
+              <ion-thumbnail>
+                <img src="assets/img/pad.png" />
+              </ion-thumbnail>
+              <p>{{devices}}</p>
+            </ion-item>
+            <button type="button" (click)="openPageLogin()" color="light" ion-button full>Device</button>
+          </section>
+        </ion-col>
+        <ion-col>
+          <section>
+            <ion-item no-lines>
+              <ion-thumbnail>
+                <img src="assets/img/list.png" />
+              </ion-thumbnail>
+              <p>
+                {{shows}}</p>
+            </ion-item>
+            <button type="button" (click)="openPageShow()" color="light" ion-button full>Show</button>
+          </section>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+  <ion-item-group class="people-group">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-item no-lines>
+              <ion-thumbnail>
+                <img src="assets/img/seat.png" />
+              </ion-thumbnail>
+              <p>{{seats}}</p>
+            </ion-item>
+            <button type="button" (click)="openPageHall()" color="light" ion-button full>Seat</button>
+          </section>
+        </ion-col>
+        <ion-col>
+          <section>
+            <ion-item no-lines>
+              <ion-thumbnail>
+                <img src="assets/img/test.png" />
+              </ion-thumbnail>
+              <p>buzz light year</p>
+            </ion-item>
+            <button type="button" (click)="openPageInspectStart()" color="light" ion-button full>Test</button>
+          </section>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+  <ion-item-group class="people-group">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button color="danger" text-center ion-item (click)="openPageCameraStart()">
+            Start Face Detection
+          </button>
+
+        </ion-col>
+ 
+
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button color="primary" text-center ion-item (click)="openPictureList()">
+           Smile List
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

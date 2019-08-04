@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'help' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    <ion-list no-lines>
+        <ion-item [ngClass]="faqExpand1 ? 'active' : '' " (click)="faqExpandToggle1()">
+            <h2 class="d-flex">{{'what_is_dj_world' | translate}}
+                <ion-icon class="material-icons end">keyboard_arrow_down</ion-icon>
+            </h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </ion-item>
+        <ion-item [ngClass]="faqExpand2 ? 'active' : '' " (click)="faqExpandToggle2()">
+            <h2 class="d-flex">{{'how_to_book' | translate}}
+                <ion-icon class="material-icons end">keyboard_arrow_down</ion-icon>
+            </h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </ion-item>
+        <ion-item [ngClass]="faqExpand3 ? 'active' : '' " (click)="faqExpandToggle3()">
+            <h2 class="d-flex">{{'where_can_i_see' | translate}}
+                <ion-icon class="material-icons end">keyboard_arrow_down</ion-icon>
+            </h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </ion-item>
+        <ion-item [ngClass]="faqExpand4 ? 'active' : '' " (click)="faqExpandToggle4()">
+            <h2 class="d-flex">{{'how_to_cancel' | translate}}
+                <ion-icon class="material-icons end">keyboard_arrow_down</ion-icon>
+            </h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </ion-item>
+        <ion-item [ngClass]="faqExpand5 ? 'active' : '' " (click)="faqExpandToggle5()">
+            <h2 class="d-flex">{{'how_to_follow' | translate}}
+                <ion-icon class="material-icons end">keyboard_arrow_down</ion-icon>
+            </h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </ion-item>
+        <ion-item [ngClass]="faqExpand6 ? 'active' : '' " (click)="faqExpandToggle6()">
+            <h2 class="d-flex">{{'can_i_message' | translate}}
+                <ion-icon class="material-icons end">keyboard_arrow_down</ion-icon>
+            </h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </ion-item>
+        <ion-item [ngClass]="faqExpand7 ? 'active' : '' " (click)="faqExpandToggle7()">
+            <h2 class="d-flex">{{'how_to_change' | translate}}
+                <ion-icon class="material-icons end">keyboard_arrow_down</ion-icon>
+            </h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </ion-item>
+        <ion-item [ngClass]="faqExpand8 ? 'active' : '' " (click)="faqExpandToggle8()">
+            <h2 class="d-flex">{{'i_want_to_change' | translate}}
+                <ion-icon class="material-icons end">keyboard_arrow_down</ion-icon>
+            </h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,86 @@
+page-selectseats {
+    .stage {
+        background: lighten($bg-color, 15%);
+        width: calc(100% - 32px);
+        margin: 0 auto;
+        border-radius: 8px;
+        margin-bottom: 14px;
+
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: $white;
+            padding: 14px 0 14px 0;
+        }
+
+    }
+
+    h3 {
+        width: 100%;
+        font-size: 1.2rem;
+        color: $white;
+        font-weight: 400;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 3px;
+    }
+
+    .row {
+        .col {
+            padding: 5px 16px;
+
+            .seats_container {
+                width: 100%;
+                max-width: 148px;
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 auto;
+
+                .seats {
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 3px;
+                    margin: 2.5px 2px;
+
+                    &.available {
+                        background: lighten($bg-color, 15%);
+                    }
+
+                    &.booked {
+                        background: darken($bg-color, 100%);
+                    }
+
+                    &.select {
+                        background: $theme-color;
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    @media(min-width:360px) {
+        .row .col .seats_container .seats {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    .footer {
+        background: $white;
+        border-radius: 8px 8px 0 0;
+
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            padding: 13px 20px 7px 20px;
+        }
+
+        .button.btn[block] {
+            margin-bottom: 0;
+            border-radius: 8px 8px 0 0;
+        }
+    }
+}

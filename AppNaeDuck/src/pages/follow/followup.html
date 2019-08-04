@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'dj_line_up' | translate}}
+            <ion-icon class="material-icons end">search</ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+  <ion-list no-lines>
+
+    <ion-item *ngFor="let item of items">
+      <div class="img_box" item-start>
+        <img src="{{this.httpImgUrl}}/member/{{item.IMG_URL}}">
+      </div>
+      <h2>{{item.ALIAS}}</h2>
+      <h3>{{item.CREATE_DTTS}}</h3>
+      <!--<div class="item_bottom_side d-flex">
+        <h4 class="d-flex">
+          <span>{{'followers' | translate}}</span>
+        </h4>
+        <button ion-button block class="btn end">{{'following' | translate}}</button>
+      </div>-->
+    </ion-item>
+      
+  </ion-list>
+</ion-content>

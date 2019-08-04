@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+
+    <ion-title>Test Complete</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon ios="ios-close" md="md-close" style="zoom: 2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card>
+    <!--<img src="https://ssl.pstatic.net/tveta/libs/1225/1225683/df364d5b437fc4584f7a_20190114120006346.jpg" class="profile-image">-->
+    <img src="data:image/jpeg;base64,{{imgUrl}}" alt="">
+    <ion-card-content>
+      <ion-card-title>
+        <ion-icon name="heart-outline"></ion-icon>
+        <ion-icon name="ios-text-outline"></ion-icon>
+        <ion-icon name="share-alt"></ion-icon>
+        <ion-icon name="ios-bookmark-outline" item-end></ion-icon>
+      </ion-card-title>
+      <p><b>{{smile}} Smile</b></p>
+      <p>Liked by <b>{{gender}}</b> </p>
+      <p><b>
+        age {{age}}</b> </p>
+      <p>
+        anger : {{anger}}
+      </p>
+      <p>
+        contempt : {{contempt}}
+      </p>
+      <p>
+        disgust : {{disgust}}
+      </p>
+      <p>
+        fear : {{fear}}
+      </p>
+      <p>
+        happiness : {{happiness}}
+      </p>
+      <p>
+        neutral : {{neutral}}
+      </p>
+      <p>
+        sadness : {{sadness}}
+      </p>
+      <p>
+        surprise : {{surprise}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

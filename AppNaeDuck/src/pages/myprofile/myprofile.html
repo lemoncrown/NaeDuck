@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'my_profile' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    <div class="banner bg-theme">
+        <div class="profie_box">
+            <div class="profie_img">
+                <img src="assets/imgs/my_pic.png">
+            </div>
+            <ion-icon class="material-icons">photo_camera</ion-icon>
+        </div>
+    </div>
+
+
+    <div class="form">
+        <ion-list no-lines>
+            <ion-item class="">
+                <ion-label floating>{{'full_name' | translate}}</ion-label>
+                <ion-input type="text" placeholder="" value="Sam Smith"></ion-input>
+            </ion-item>
+
+            <ion-item class="">
+                <ion-label floating>{{'email_address' | translate}}</ion-label>
+                <ion-input type="text" placeholder="" value="samsmith@mail.com"></ion-input>
+            </ion-item>
+
+            <ion-item class="">
+                <ion-label floating>{{'phone_number_optional' | translate}}</ion-label>
+                <ion-input type="text" placeholder="" value="987 654 3210"></ion-input>
+            </ion-item>
+        </ion-list>
+        <button ion-button block class="btn" (click)="home()"> {{'update_profile' | translate}}</button>
+    </div>
+</ion-content>

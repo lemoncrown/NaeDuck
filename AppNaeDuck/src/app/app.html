@@ -1,0 +1,39 @@
+<ion-menu [content]="content" id="Menu">
+  <ion-header>
+    <div class="profie_box" menuClose (click)="myprofile()">
+      <div class="profie_img">
+        <img src="assets/imgs/my_pic.png">
+      </div>
+      <h2 class="">Sam Smith
+        <ion-icon class="material-icons">keyboard_arrow_right</ion-icon>
+      </h2>
+    </div>
+  </ion-header>
+
+
+
+  <ion-content>
+        <ion-list no-lines class="menu-item">
+            <ion-item menuClose (click)="home()">
+                <h2>{{'events' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="mydjs()">
+                <h2>{{'my_djs' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="mytickets()">
+                <h2>{{'my_tickets' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="conditions()">
+                <h2>{{'terms_conditions' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="help()">
+                <h2>{{'help' | translate}}</h2>
+            </ion-item>
+            <ion-item menuClose (click)="signin()">
+                <h2>{{'logout' | translate}}</h2>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

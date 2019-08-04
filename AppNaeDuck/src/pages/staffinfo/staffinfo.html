@@ -1,0 +1,116 @@
+<ion-header class="bg-transparent">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <ion-icon class="material-icons end">share</ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    <div class="banner">
+        <div class="video_box">
+            <div class="video">
+                <img src="assets/imgs/img1.png">
+                <ion-icon class="material-icons">play_circle_filled</ion-icon>
+            </div>
+        </div>
+        <div class="dj_profile d-flex">
+          <div class="img_box">
+            <img src="{{this.httpImgUrl}}/member/{{IMG_URL}}">
+          </div>
+            <div class="text">
+              <h2>{{NAME}}</h2>
+                <h3>{{AGENT}}</h3>
+            </div>
+        </div>
+    </div>
+    <ion-list no-lines>
+        <ion-row>
+            <ion-col col-6>
+                <ion-item  (click)="followup()">
+                    <h2>{{FOLLOW}}</h2>
+                    <h3>{{'followers' | translate}}</h3>
+                </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                  <ion-item class="follow_now" (click)="eventfollow()">
+                    <h2 text-center>{{'follow_now' | translate}}</h2>
+                  </ion-item>
+                </ion-col>
+                </ion-row>
+                <ion-item class="about">
+                  <h2>{{'about' | translate}} {{NAME}}</h2>
+                  <p>
+                    {{ABOUT}} <span>{{'read_more' | translate}}</span>
+                  </p>
+                </ion-item>
+                <ion-row>
+                  <ion-col col-6>
+                    <ion-item>
+                      <h3>{{'listen_on' | translate}}</h3>
+                      <img src="assets/imgs/link_1.png">
+                    </ion-item>
+                  </ion-col>
+                  <ion-col col-6>
+                    <ion-item>
+                      <h3>{{'listen_on' | translate}}</h3>
+                      <img src="assets/imgs/link_2.png">
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+                </ion-list>
+
+
+                <ion-list no-lines class="upcoming_events">
+                  <div class="list_header">
+                    <h2 class="d-flex">{{'upcoming_events' | translate}} <!--<span class="end">{{'view_all' | translate}}</span>--></h2>
+                  </div>
+
+                  <!-- for -->
+                  <ion-item *ngFor="let item of items" (click)="event()">
+                    <div class="item_banner">
+                      <img src="{{this.httpImgUrl}}/show/{{item.IMG_ALIAS}}">
+                      <h2>{{item.TITLE}}</h2>
+                    </div>
+                    <div class="details">
+                      <div class="d-flex event_details">
+                        <img src="assets/imgs/ic_dj_pin.png" class="icon">
+                        <div class="text">
+                          <h3>{{item.LOCATION}}</h3>
+                          <h4 class="d-flex">
+                            <span class="date">{{item.START | timetoDataConvert }} ~ {{item.FINISH | timetoDataConvert}}</span>
+                            <span class="time">{{item.START_TIME}} - {{item.FINISH_TIME}}</span>
+                            <span class="end">987 {{'people_attending' | translate}}</span>
+                          </h4>
+                        </div>
+                      </div>
+                      <div class="d-flex event_details">
+                        <img src="assets/imgs/ic_dj.png" class="icon">
+                        <h4>{{'djs' | translate}}</h4>
+                        <div class="djs_img">
+                          <div class="djs_profile_img">
+                            <img src="assets/imgs/dj1.png">
+                          </div>
+                          <div class="djs_profile_img">
+                            <img src="assets/imgs/dj2.png">
+                          </div>
+                          <div class="djs_profile_img">
+                            <img src="assets/imgs/dj3.png">
+                          </div>
+                          <div class="djs_profile_img">
+                            <img src="assets/imgs/dj4.png">
+                          </div>
+                          <div class="djs_profile_img more">
+                            <span>5+</span>
+                          </div>
+                        </div>
+                        <h2 class="end">{{item.COST}}원</h2>
+                      </div>
+                    </div>
+                  </ion-item>
+
+                </ion-list>
+</ion-content>

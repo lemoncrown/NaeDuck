@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{selectedDate}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon ios="ios-close" md="md-close" style="zoom: 2.0;"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-slides #datepicker slidesPerView="8" radio-group [ngModel]="selected" (ionChange)="onDateChange($event)">
+      <ng-container *ngFor="let item of itemsWeek; let i = index">
+        <ion-slide>
+          <ion-item>
+            <ion-label>
+              <div class="dayOfWeek"><span>{{item.WEEK}}</span></div>
+      <div class="day"><span>{{item.DAY}}</span></div>
+      </ion-label>
+      <ion-radio [value]="item.ID" [disabled]="false"></ion-radio>
+      </ion-item>
+      </ion-slide>
+      </ng-container>
+      </ion-slides>
+
+      </ion-toolbar>
+
+
+
+</ion-header>
+<ion-content padding>
+  <div class="ticket-list">
+
+    <div class="ticket-item" *ngFor="let item of items" tappable (tap)="onSelect(item)">
+      <div class="movie-content">
+        <div class="movie-summary">
+          <div class="poster">
+            <div class="content">
+
+              <img src="{{this.showImgUrl}}/{{item.IMG_ALIAS}}" />
+            </div>
+          </div>
+
+
+          <div class="item-content">
+            <span class="title">{{item.TITLE}}</span>
+            <span class="genre">{{item.F_AGE}}세~{{item.T_AGE}}세</span>
+            <span class="line">
+              <span class="date">DATE</span>
+              <span class="time">{{item.OPEN_DTTS | timetoDataConvert}}</span>
+
+            </span>
+            <span class="line">
+              <span class="date">TIME</span>
+              <span class="time">{{item.HH}}:{{item.MM}}</span>
+            </span>
+            <span class="line">
+              <span class="date">COST</span>
+              <span class="time">{{item.COST}}원</span>
+            </span>
+            <span class="line">
+              <span class="date">인원</span>
+              <span class="time">{{item.PEOPLE}}명</span>
+            </span>
+            <!-- services rating -->
+            <div class="ratings">
+              <div class="imdb">
+                <span>RATE <span class="nb">9.7</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

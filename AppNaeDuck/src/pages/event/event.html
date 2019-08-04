@@ -1,0 +1,185 @@
+<ion-header class="bg-transparent">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <ion-icon class="material-icons end">search</ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+
+  
+  <!--
+  <div class="banner">
+    <div class="map">
+      <img src="assets/imgs/map.png" class="map_img">
+      <div class="icon_box" style="top:20%; right: 50%">
+        <img src="assets/imgs/ic_dj_pin.png">
+      </div>
+    </div>
+ <div class="banner_img">
+      <img src="assets/imgs/img2.png">
+      <ion-icon class="material-icons">share</ion-icon>
+    </div>
+
+
+
+  </div>
+  -->
+  <!-- youtube start -->
+  <div class="banner">
+    <div class="map">
+      <img src="assets/imgs/map.png" class="map_img">
+      <div class="icon_box" style="top:20%; right: 50%">
+        <img src="assets/imgs/ic_dj_pin.png">
+      </div>
+    </div>
+
+    <div class="banner_img">
+      <div class="youtube-embed-wrapper" style="position: relative; padding-bottom: 56.25%; padding-top: 5px; height: 0; overflow: hidden;">
+        <iframe allowfullscreen='' frameborder='0' height='360' [src]='youtubeUrl | youtube' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='640'></iframe>
+      </div>
+    </div>
+  </div>
+  <!-- youtube end -->
+ 
+<ion-list no-lines>
+  <ion-item class="address">
+    <h2>{{TITLE}}</h2>
+    <h3 class="d-flex">
+      <img src="assets/imgs/ic_dj_pin.png">
+      <small>{{LOCATION}}</small>
+    </h3>
+  </ion-item>
+  <ion-row>
+    <ion-col col-6>
+      <ion-item>
+        <h2>{{'date' | translate}}</h2>
+        <h3 class="d-flex">
+          <ion-icon class="material-icons">event</ion-icon>
+          <small>{{START}} ~ {{FINISH}}</small>
+        </h3>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <h2>{{'time' | translate}}</h2>
+        <h3 class="d-flex" *ngFor="let item of itemsTime" >
+          <ion-icon class="material-icons">query_builder</ion-icon>
+          <small>월요일({{item.TIME}})</small>
+        </h3>
+   
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-item class="dj_line_up">
+    <!-- 출연진소개 -->
+    <h2 class="d-flex">{{'appear' | translate}} <span class="end" (click)="stafflineup()">{{'view_all' | translate}}</span></h2>
+    <ion-scroll scrollX="true">
+
+
+      <div class="djs_box" *ngFor="let item of items"  (click)="djinfo()">
+        <div class="dj_img">
+          <img src="{{this.httpImgUrl}}/member/{{item.IMG_URL}}">
+        </div>
+        <h4>{{item.ALIAS}}</h4>
+        <h3><small>{{item.NAME}}</small></h3>
+      </div>
+
+    </ion-scroll>
+  </ion-item>
+  <!-- 좋아요 리스트 -->
+  <ion-item class="poeple_are_attending">
+    <h2 class="d-flex">987 {{'poeple_are_good' | translate}}</h2>
+    <ion-scroll scrollX="true">
+      <div class="img_box">
+        <img src="assets/imgs/1.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/2.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/3.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/4.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/5.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/6.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/7.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/8.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/9.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/1.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/2.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/3.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/4.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/5.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/6.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/7.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/8.png">
+      </div>
+      <div class="img_box">
+        <img src="assets/imgs/9.png">
+      </div>
+      <div class="img_box">
+        <span>978+</span>
+      </div>
+    </ion-scroll>
+  </ion-item>
+</ion-list>
+
+    
+
+
+<!-- poster start -->
+<div>
+  <img src="{{this.httpImgUrl}}/poster/{{POSTER}}">
+</div>
+
+
+
+</ion-content>
+<ion-footer no-border>
+    <ion-list no-lines>
+        <ion-item>
+            <ion-row>
+                <ion-col col-4>
+                    <h3><small>{{'ticket_per_person' | translate}}</small></h3>
+                    <h2>{{COST}} 원</h2>
+                </ion-col>
+                <ion-col col-8 (click)="selectseats()">
+                    <button ion-button block class="btn"><img src="assets/imgs/ic_ticket.png"> {{'book_your_ticket_now' | translate}}</button>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+    </ion-list>
+</ion-footer>

@@ -1,0 +1,50 @@
+page-help {
+    .list {
+        padding-top: 20px;
+
+        .item {
+            background: none;
+            width: calc(100% - 40px);
+            margin: 0 auto;
+            padding: 13px 0;
+
+            .item-inner {
+                padding: 0;
+
+                .label {
+                    margin: 0;
+                    white-space: normal;
+
+                    h2 {
+                        color: $white;
+                        font-size: 1.8rem;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                    p {
+                        color: lighten($gray, 20%);
+                        padding-top: 10px;
+                        line-height: 19px;
+                        display: none;
+                    }
+                }
+            }
+
+            &.active {
+                p {
+                    display: block !important;
+
+                }
+
+                h2 {
+                    ion-icon {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+        }
+    }
+}

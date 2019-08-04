@@ -1,0 +1,311 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <span class="app_title" text-center>{{'app_title' | translate}}</span>
+            <ion-icon class="material-icons end">search</ion-icon>
+        </ion-title>
+    </ion-navbar>
+    <ion-segment [(ngModel)]="home_tab">
+        <ion-segment-button value="for_you">
+            {{'for_you' | translate}}
+        </ion-segment-button>
+        <ion-segment-button value="popular">
+            {{'popular' | translate}}
+        </ion-segment-button>
+    </ion-segment>
+</ion-header>
+
+<ion-content class="bg-color" [ngSwitch]="home_tab">
+    <ion-list no-lines *ngSwitchCase="'for_you'">
+        <ion-item class="view_all" (click)="nearyevents()">
+            <div class="d-flex">
+                <img src="assets/imgs/ic_dj_pin.png">
+                <h2>{{'view_all_events_around_you' | translate}}</h2>
+                <ion-icon class="material-icons end">keyboard_arrow_right</ion-icon>
+            </div>
+        </ion-item>
+
+
+      <!-- for -->
+      <ion-item  *ngFor="let item of items" (click)="event(item)" >
+        <div class="item_banner">
+          <!-- POSTER IMG test -->
+          <img src="{{this.httpImgUrl}}/show/{{item.IMG_ALIAS}}">
+          <h2>{{item.TITLE}}</h2>
+          <ion-icon class="material-icons" (click)="eventgood(item)">favorite_border</ion-icon>
+        </div>
+            <div class="details" >
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj_pin.png" class="icon">
+                    <div class="text">
+                      <h3>{{item.LOCATION}}</h3>
+                        <h4 class="d-flex">
+                          <span class="date">{{item.START | timetoDataConvert }} ~ {{item.FINISH | timetoDataConvert}}</span>
+                          <span class="time">월 수 금</span>
+                          <span class="end">987 {{'poeple_are_good' | translate}}</span>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj.png" class="icon">
+                    <h4>{{'Casting' | translate}}</h4>
+                    <div class="djs_img">
+                      <div class="djs_profile_img"  *ngFor="let info of itemsCast | showCastingList:item.SHOW_RAWID">
+                        <img src="{{this.httpImgUrl}}/member/{{info.IMG_URL}}">
+                      </div>
+
+                 
+                      <!--<div class="djs_profile_img">
+    <img src="assets/imgs/mon.png">
+  </div>
+  <div class="djs_profile_img">
+    <img src="assets/imgs/sun.png">
+  </div>
+  <div class="djs_profile_img">
+    <img src="assets/imgs/sat.png">
+  </div>
+  <div class="djs_profile_img">
+    <img src="assets/imgs/dj4.png">
+  </div>
+  <div class="djs_profile_img more">
+    <span>월</span>
+  </div>-->
+
+                    </div>
+                    <h2 class="end">{{item.COST}}원</h2>
+                </div>
+            </div>
+        </ion-item>
+
+
+
+
+
+      <ion-item (click)="event()">
+            <div class="item_banner">
+                <img src="assets/imgs/img3.png">
+                <h2>Bass Hill EDM Show</h2>
+                <ion-icon class="material-icons">favorite_border</ion-icon>
+            </div>
+            <div class="details">
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj_pin.png" class="icon">
+                    <div class="text">
+                        <h3>2202, Marion St. Bass Hill, Amsterdam</h3>
+                        <h4 class="d-flex">
+                            <span class="date">28th March</span>
+                            <span class="time">22:22 - 04:22</span>
+                            <span class="end">987 {{'people_attending' | translate}}</span>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj.png" class="icon">
+                    <h4>{{'djs' | translate}}</h4>
+                    <div class="djs_img">
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj1.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj2.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj3.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj4.png">
+                        </div>
+                        <div class="djs_profile_img more">
+                            <span>5+</span>
+                        </div>
+                    </div>
+                    <h2 class="end">$ 130.00</h2>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item (click)="event()">
+            <div class="item_banner">
+                <img src="assets/imgs/img4.png">
+                <h2>Bass Hill EDM Show</h2>
+                <ion-icon class="material-icons">favorite_border</ion-icon>
+            </div>
+            <div class="details">
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj_pin.png" class="icon">
+                    <div class="text">
+                        <h3>2202, Marion St. Bass Hill, Amsterdam</h3>
+                        <h4 class="d-flex">
+                            <span class="date">28th March</span>
+                            <span class="time">22:22 - 04:22</span>
+                            <span class="end">987 {{'people_attending' | translate}}</span>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj.png" class="icon">
+                    <h4>{{'djs' | translate}}</h4>
+                    <div class="djs_img">
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj1.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj2.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj3.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj4.png">
+                        </div>
+                        <div class="djs_profile_img more">
+                            <span>5+</span>
+                        </div>
+                    </div>
+                    <h2 class="end">$ 130.00</h2>
+                </div>
+            </div>
+        </ion-item>
+    </ion-list>
+
+
+    <ion-list no-lines *ngSwitchCase="'popular'">
+        <ion-item (click)="event()">
+            <div class="item_banner">
+                <img src="assets/imgs/img3.png">
+                <h2>Bass Hill EDM Show</h2>
+                <ion-icon class="material-icons">favorite_border</ion-icon>
+            </div>
+            <div class="details">
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj_pin.png" class="icon">
+                    <div class="text">
+                        <h3>2202, Marion St. Bass Hill, Amsterdam</h3>
+                        <h4 class="d-flex">
+                            <span class="date">28th March</span>
+                            <span class="time">22:22 - 04:22</span>
+                            <span class="end">987 {{'people_attending' | translate}}</span>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj.png" class="icon">
+                    <h4>{{'djs' | translate}}</h4>
+                    <div class="djs_img">
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj1.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj2.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj3.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj4.png">
+                        </div>
+                        <div class="djs_profile_img more">
+                            <span>5+</span>
+                        </div>
+                    </div>
+                    <h2 class="end">$ 130.00</h2>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item (click)="event()">
+            <div class="item_banner">
+                <img src="assets/imgs/img1.png">
+                <h2>Bass Hill EDM Show</h2>
+                <ion-icon class="material-icons">favorite_border</ion-icon>
+            </div>
+            <div class="details">
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj_pin.png" class="icon">
+                    <div class="text">
+                        <h3>2202, Marion St. Bass Hill, Amsterdam</h3>
+                        <h4 class="d-flex">
+                            <span class="date">28th March</span>
+                            <span class="time">22:22 - 04:22</span>
+                            <span class="end">987 {{'people_attending' | translate}}</span>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj.png" class="icon">
+                    <h4>{{'djs' | translate}}</h4>
+                    <div class="djs_img">
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj1.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj2.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj3.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj4.png">
+                        </div>
+                        <div class="djs_profile_img more">
+                            <span>5+</span>
+                        </div>
+                    </div>
+                    <h2 class="end">$ 130.00</h2>
+                </div>
+            </div>
+        </ion-item>
+
+        <ion-item (click)="event()">
+            <div class="item_banner">
+                <img src="assets/imgs/img2.png">
+                <h2>Bass Hill EDM Show</h2>
+                <ion-icon class="material-icons">favorite_border</ion-icon>
+            </div>
+            <div class="details">
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj_pin.png" class="icon">
+                    <div class="text">
+                        <h3>2202, Marion St. Bass Hill, Amsterdam</h3>
+                        <h4 class="d-flex">
+                            <span class="date">28th March</span>
+                            <span class="time">22:22 - 04:22</span>
+                            <span class="end">987 {{'people_attending' | translate}}</span>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="d-flex event_details">
+                    <img src="assets/imgs/ic_dj.png" class="icon">
+                    <h4>{{'djs' | translate}}</h4>
+                    <div class="djs_img">
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj1.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj2.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj3.png">
+                        </div>
+                        <div class="djs_profile_img">
+                            <img src="assets/imgs/dj4.png">
+                        </div>
+                        <div class="djs_profile_img more">
+                            <span>5+</span>
+                        </div>
+                    </div>
+                    <h2 class="end">$ 130.00</h2>
+                </div>
+            </div>
+        </ion-item>
+    </ion-list>
+</ion-content>

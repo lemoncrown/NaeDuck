@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{'select_option_to_pay' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    <ion-list no-lines radio-group>
+        <ion-item>
+            <ion-label>{{'pay_pal' | translate}}</ion-label>
+            <ion-radio checked="true" value="pay_pal" item-start></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{'payu_money' | translate}}</ion-label>
+            <ion-radio value="payu_money" item-start></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{'bank_transfer' | translate}}</ion-label>
+            <ion-radio value="bank_transfer" item-start></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{'cheque_payment' | translate}}</ion-label>
+            <ion-radio value="cheque_payment" item-start></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{'net_banking' | translate}}</ion-label>
+            <ion-radio value="net_banking" item-start></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>{{'pay_on_spot' | translate}}</ion-label>
+            <ion-radio value="pay_on_spot" item-start></ion-radio>
+        </ion-item>
+    </ion-list>
+</ion-content>
+<ion-footer no-border>
+    <button ion-button block class="btn" (click)="ticketbooked()"> {{'pay' | translate}} $267.80</button>
+</ion-footer>

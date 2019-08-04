@@ -1,0 +1,250 @@
+page-home {
+    .header {
+        background: $theme-color;
+
+        .toolbar .title {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 100%;
+
+            .app_title {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                z-index: -1;
+                font-size: 2rem;
+                font-weight: 400;
+            }
+        }
+
+        .segment {
+            background: none;
+            border: none !important;
+
+
+            .segment-button {
+                width: 100%;
+                background: none;
+                border: none !important;
+                text-transform: none;
+                opacity: 1;
+                font-size: 1.6rem;
+                color: darken($theme-color, 20%);
+                position: relative;
+                font-weight: 400;
+
+                &.segment-activated {
+                    color: $white;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        width: 120px;
+                        height: 3px;
+                        background: $white;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .list {
+        padding-top: 13px;
+
+        .item {
+            width: calc(100% - 32px);
+            margin: 0 auto;
+            margin-bottom: 14px;
+            border-radius: 8px;
+            padding: 0;
+
+            .item-inner {
+                padding: 0;
+
+                .label {
+                    margin: 0;
+                    white-space: normal;
+                }
+            }
+
+            &.view_all {
+                padding: 4px 11px 4px 11px;
+
+                img {
+                    width: 25px;
+                }
+
+                h2 {
+                    font-weight: 500;
+                    font-size: 1.5rem;
+                    margin: 0 14px;
+                }
+
+                ion-icon {
+                    color: $gray;
+                }
+            }
+
+            .item_banner {
+                position: relative;
+                width: 100%;
+                height: 190px;
+                overflow: hidden;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: -50% !important;
+                    bottom: 0;
+                    right: -50% !important;
+                    margin: auto;
+                }
+
+                h2 {
+                    position: absolute;
+                    bottom: 0;
+                    color: $white;
+                    padding: 15px 18px;
+                    padding-top: 20px;
+                    width: 100%;
+                    font-size: 1.9rem;
+                    font-weight: 500;
+                    z-index: 99;
+                    margin-bottom: 0;
+                }
+
+                ion-icon {
+                    position: absolute;
+                    color: $white;
+                    right: 10px;
+                    top: 10px;
+                    z-index: 99;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.6) 99%, rgba(0, 0, 0, 0.61) 100%);
+                }
+            }
+
+            .details {
+                padding: 5px 15px 0px 15px;
+
+                .event_details {
+                    align-items: flex-start !important;
+                    padding: 9px 0 9px 0;
+
+                    img {
+                        &.icon {
+                            width: 18px;
+                            margin-right: 13px;
+                            //height: 18px;
+                        }
+                    }
+
+                    .text {
+                        width: 100%;
+                    }
+
+                    h3 {
+                        font-size: 1.3rem;
+                        font-weight: 600;
+                    }
+
+                    h4 {
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                        padding-top: 1px;
+                        color: lighten($gray, 20%);
+                        letter-spacing: .5px;
+
+                        span {
+                            position: relative;
+
+                            &.date {
+                                padding: 0 5px;
+                                padding-left: 0;
+                                //border-right: 1.5px solid lighten($gray, 20%);
+                                line-height: normal;
+
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    bottom: 1px;
+                                    right: 0;
+                                    background: lighten($gray, 20%);
+                                    width: 1.5px;
+                                    height: 9px
+                                }
+                            }
+
+                            &.time {
+                                padding: 0 5px;
+                            }
+                        }
+                    }
+
+                    h2 {
+                        margin-top: 0;
+                        font-size: 1.9rem;
+                        font-weight: 500;
+                        color: $theme-color;
+                    }
+
+                    .djs_img {
+                        display: flex;
+                        align-items: center;
+                        margin: 0 10px;
+
+                        .djs_profile_img {
+                            position: relative;
+                            overflow: hidden;
+                            border-radius: 50%;
+                            width: 18px;
+                            height: 18px;
+                            margin: 0 2px;
+                            background: url(../assets/imgs/bg_blur.png);
+                            background-size: cover;
+
+                            img {
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                left: -50% !important;
+                                bottom: 0;
+                                right: -50% !important;
+                                margin: auto;
+                            }
+
+                            span {
+                                text-align: center;
+                                display: block;
+                                color: $white;
+                                font-size: .8rem;
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

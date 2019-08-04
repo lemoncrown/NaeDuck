@@ -1,0 +1,123 @@
+page-confrimtIckets {
+    .list {
+        width: calc(100% - 32px);
+        margin: 0 auto;
+        margin-top: 14px;
+
+        .item {
+            position: relative;
+            overflow: hidden;
+            padding: 13px 17px 11px 17px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+
+            .item-inner {
+                padding: 0;
+
+                .label {
+                    margin: 0;
+
+                    .banner {
+                        position: relative;
+                        width: 100%;
+                        height: 200px;
+                        overflow: hidden;
+
+                        img {
+                            position: absolute;
+                            width: 100%;
+                            height: auto;
+                            top: 0;
+                            left: -50% !important;
+                            bottom: 0;
+                            right: -50% !important;
+                            margin: auto;
+                        }
+                    }
+
+                    h2 {
+                        font-size: 1.9rem;
+                        font-weight: 500;
+                        letter-spacing: 0;
+                        padding-bottom: 5px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+
+                        span {
+                            color: $theme-color;
+                            font-weight: 500;
+                            font-size: 1.6rem;
+                        }
+
+                    }
+
+                    h3 {
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        color: $gray;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        padding-top: 8px;
+
+                        img {
+                            width: 14px;
+                            margin-right: 8px;
+                        }
+
+                        ion-icon {
+                            color: $theme-color;
+                            margin-right: 8px;
+                            font-size: 1.3rem;
+                        }
+
+                    }
+
+                    .row {
+                        margin: 0 -5px;
+                    }
+                }
+            }
+
+            &.item_banner {
+                padding: 0;
+            }
+
+            &.ticket_details {
+                .item-inner .label {
+                    h2 {
+                        font-size: 1.5rem;
+
+
+                    }
+
+                    h3 {
+                        color: darken($gray, 100%) !important;
+                        padding-bottom: 7px;
+
+                        span {
+                            color: $gray;
+                            margin: 0 5px;
+                        }
+
+                        strong {
+                            color: darken($gray, 100%) !important;
+                            font-size: 1.25rem;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    .footer {
+        .button.btn[block] {
+            margin-bottom: 0;
+            border-radius: 8px 8px 0 0;
+        }
+    }
+}

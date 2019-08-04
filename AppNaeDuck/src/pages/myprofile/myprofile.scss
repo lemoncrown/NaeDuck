@@ -1,0 +1,53 @@
+page-myprofile {
+    .banner {
+        padding: 38px 0;
+
+        .profie_box {
+            position: relative;
+            overflow: hidden;
+            height: 148px;
+
+            .profie_img {
+                width: 130px;
+                height: 130px;
+                border-radius: 5px;
+                overflow: hidden;
+                position: relative;
+                margin: 0 auto;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: -50% !important;
+                    bottom: 0;
+                    right: -50% !important;
+                    margin: auto;
+                }
+            }
+
+            ion-icon {
+                position: absolute;
+                width: 36px;
+                height: 36px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                background: $white;
+                border-radius: 50%;
+                color: $theme-color;
+                text-align: center;
+                font-size: 2.1rem;
+                line-height: 36px;
+            }
+        }
+    }
+
+    .form {
+        .list {
+            margin-bottom: 16px;
+        }
+    }
+}

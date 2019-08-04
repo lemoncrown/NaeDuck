@@ -1,0 +1,59 @@
+page-payment {
+    .list {
+        width: calc(100% - 32px);
+        margin: 0 auto;
+        margin-top: 20px;
+
+        .item {
+            padding: 0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            padding: 7px 20px 7px 20px;
+
+            .radio {
+                margin: 0 !important;
+                margin-right: 20px !important;
+
+                .radio-icon {
+                    &.radio-checked {
+                        border-color: $theme-color;
+
+                        .radio-inner {
+                            background: $theme-color;
+                        }
+                    }
+                }
+
+                &.radio-ios {
+                    .radio-icon {
+                        &.radio-checked {
+                            .radio-inner {
+                                background: none;
+                                border-color: $theme-color;
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            .item-inner {
+                padding: 0;
+
+                .label {
+                    margin: 0;
+                    color: darken($gray, 100%);
+                    font-weight: 500;
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+
+    .footer {
+        .button.btn[block] {
+            margin-bottom: 0;
+            border-radius: 8px 8px 0 0;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+page-conditions {
+    .text_box {
+        width: calc(100% - 50px);
+        margin: 0 auto;
+
+        p {
+            margin: 0;
+            font-size: 1.5rem;
+            color: darken($white, 5%);
+            line-height: 24px;
+            padding-top: 25px;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: darken($white, 50%);
+            padding-top: 20px;
+        }
+    }
+}

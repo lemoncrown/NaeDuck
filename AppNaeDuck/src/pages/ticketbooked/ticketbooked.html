@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar>
+<!--
+<button ion-button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+</button>
+-->
+        <ion-title>
+            <ion-icon class="material-icons end" (click)="home()">home</ion-icon>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+    <div class="banner">
+        <h2 text-center>
+            <img src="assets/imgs/ic_done.png">
+            {{'ticket_booked' | translate}}
+        </h2>
+    </div>
+    <div class="card_box">
+        <ion-card>
+            <div class="card_header">
+                <div class="name_address">
+                    <h1>Bass Hill EDM Show</h1>
+                    <h3 class="d-flex"><img src="assets/imgs/ic_dj_pin.png"> 2202, Marion St. Bass Hill, Amsterdam</h3>
+                </div>
+                <ion-row>
+                    <ion-col col-6>
+                        <h3>{{'date' | translate}}</h3>
+                        <h2>28th march</h2>
+                    </ion-col>
+                    <ion-col col-6>
+                        <h3>{{'time' | translate}}</h3>
+                        <h2>22:00 - 04:00</h2>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col col-6>
+                        <h3>{{'ticket_type' | translate}}</h3>
+                        <h2>{{'preamium' | translate}}<br> C10 - C11</h2>
+                    </ion-col>
+                    <ion-col col-6>
+                        <h3>{{'vistor_name' | translate}}</h3>
+                        <h2>Sam Smith + <br> 1 other</h2>
+                    </ion-col>
+                </ion-row>
+            </div>
+
+            <div class="card_contant">
+                <h3 text-center>{{'show_the_qr' | translate}}</h3>
+                <div class="qr_code">
+                    <img src="assets/imgs/Qr_Code.png">
+                </div>
+            </div>
+        </ion-card>
+    </div>
+</ion-content>
